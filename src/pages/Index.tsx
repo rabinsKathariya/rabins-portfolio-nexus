@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -6,6 +5,7 @@ import Footer from "@/components/Footer";
 import SocialLinks from "@/components/SocialLinks";
 import ProjectCard from "@/components/ProjectCard";
 import ServiceCard from "@/components/ServiceCard";
+import SkillBar from "@/components/SkillBar";
 
 import { ArrowRight, Github, Linkedin, Instagram } from "lucide-react";
 
@@ -64,6 +64,13 @@ const Index = () => {
       technologies: ["Python", "Pandas", "Seaborn", "Matplotlib"],
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=600"
     }
+  ];
+
+  const skills = [
+    { skill: "Python", level: 85 },
+    { skill: "NumPy & Pandas", level: 75 },
+    { skill: "Pygame", level: 70 },
+    { skill: "Data Visualization", level: 65 },
   ];
 
   return (
@@ -154,107 +161,207 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Section Preview */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">About Me</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+      {/* About Section Preview - Enhanced with modern UI */}
+      <section className="py-16 bg-gray-50 relative overflow-hidden">
+        {/* Background elements */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-40 left-20 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col items-center mb-12">
+            <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-brand-50 to-brand-100 text-brand-600 rounded-full text-sm font-medium mb-4">
+              About Me
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 text-center">
+              <span className="bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                My Journey & Skills
+              </span>
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-brand-500 to-brand-400 rounded-full mb-6"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto text-center">
               I'm a passionate programmer with strong focus on Python and emerging interest in AI/ML technologies.
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto">
-            <p className="text-gray-600 mb-6 text-center">
-              As a Class 12 Computer Engineering student from Nepal, I'm dedicated to expanding my skills in software development. 
-              My expertise includes Python (NumPy, Pandas, Pygame, Seaborn, OpenCV), along with foundational knowledge in C, C++, and C#.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6 order-2 lg:order-1">
+              <p className="text-gray-600 leading-relaxed">
+                As a Class 12 Computer Engineering student from Nepal, I'm dedicated to expanding my skills in software development. 
+                My expertise includes Python (NumPy, Pandas, Pygame, Seaborn, OpenCV), along with foundational knowledge in C, C++, and C#.
+              </p>
+              
+              <div className="space-y-4">
+                {skills.map((item, index) => (
+                  <SkillBar key={index} skill={item.skill} level={item.level} />
+                ))}
+              </div>
+              
+              <div className="flex justify-start mt-4">
+                <Link to="/about">
+                  <Button className="group bg-transparent border border-brand-500 text-brand-600 hover:bg-brand-50 transition-all">
+                    <span>Learn More About Me</span>
+                    <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
             
-            <div className="flex justify-center">
-              <Link to="/about">
-                <Button className="bg-transparent hover:bg-gray-100 text-brand-600 border border-brand-500">
-                  Learn More About Me <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+            <div className="relative order-1 lg:order-2 mx-auto lg:mx-0">
+              <div className="relative">
+                {/* Decorative elements */}
+                <div className="absolute -top-4 -right-4 w-24 h-24 border-4 border-brand-100 rounded-lg z-0"></div>
+                <div className="absolute -bottom-4 -left-4 w-24 h-24 border-4 border-blue-100 rounded-lg z-0"></div>
+                
+                {/* Image with shadow and styling */}
+                <div className="relative z-10 shadow-xl rounded-lg overflow-hidden border-4 border-white">
+                  <img 
+                    src="/lovable-uploads/ca6c3fe7-8d8b-40cb-9eb4-3184fcba63aa.png" 
+                    alt="Rabins Kathariya - Programming Skills" 
+                    className="w-full h-auto max-w-sm object-cover transform hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-12">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-2">Featured Projects</h2>
-              <p className="text-gray-600">Check out some of my recent work</p>
+      {/* Featured Projects - Enhanced with modern UI */}
+      <section className="py-16 relative overflow-hidden">
+        {/* Background elements */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-500/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col items-center mb-12">
+            <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-blue-50 to-blue-100 text-blue-600 rounded-full text-sm font-medium mb-4">
+              My Work
             </div>
-            <Link to="/portfolio" className="mt-4 md:mt-0">
-              <Button className="bg-transparent hover:bg-gray-100 text-brand-600 border border-brand-500">
-                View All Projects
-              </Button>
-            </Link>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 text-center">
+              <span className="bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                Featured Projects
+              </span>
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full mb-6"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto text-center">
+              Check out some of my recent work as I continue to build my portfolio
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <ProjectCard 
-                key={index}
-                title={project.title}
-                description={project.description}
-                technologies={project.technologies}
-                image={project.image}
-              />
+              <div key={index} className="transform hover:-translate-y-2 transition-all duration-300">
+                <ProjectCard 
+                  title={project.title}
+                  description={project.description}
+                  technologies={project.technologies}
+                  image={project.image}
+                />
+              </div>
             ))}
+          </div>
+          
+          <div className="flex justify-center mt-12">
+            <Link to="/portfolio">
+              <Button className="group bg-transparent border border-blue-500 text-blue-600 hover:bg-blue-50 transition-all">
+                <span>View All Projects</span>
+                <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">My Services</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+      {/* Services Section - Enhanced with modern UI */}
+      <section className="py-16 bg-gray-50 relative overflow-hidden">
+        {/* Background elements */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute bottom-20 left-10 w-80 h-80 bg-brand-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 right-10 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col items-center mb-12">
+            <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-green-50 to-green-100 text-green-600 rounded-full text-sm font-medium mb-4">
+              What I Offer
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 text-center">
+              <span className="bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                My Services
+              </span>
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-green-400 rounded-full mb-6"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto text-center">
               Services I can provide to help with your projects
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <ServiceCard 
-                key={index}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-                features={service.features}
-              />
+              <div key={index} className="transform hover:-translate-y-2 transition-all duration-300">
+                <ServiceCard 
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                  features={service.features}
+                />
+              </div>
             ))}
           </div>
 
           <div className="flex justify-center mt-12">
             <Link to="/services">
-              <Button className="bg-brand-500 hover:bg-brand-600 text-white px-6 py-3">
-                Explore All Services <ArrowRight className="ml-2 h-4 w-4" />
+              <Button className="group bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white shadow-lg hover:shadow-green-500/25 rounded-xl px-6 py-3">
+                <span>Explore All Services</span>
+                <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Let's Work Together</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-            Have a project in mind? Looking for a programming assistant or collaborator?
-            I'm currently available for freelance work and interesting projects.
-          </p>
-          <Link to="/contact">
-            <Button className="bg-brand-500 hover:bg-brand-600 text-white px-8 py-4 text-lg">
-              Get In Touch
-            </Button>
-          </Link>
+      {/* Contact CTA - Enhanced with modern UI */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-500/10 to-blue-500/10 z-0"></div>
+        
+        {/* Background elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 -right-20 w-80 h-80 bg-brand-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
+            <div className="text-center mb-8">
+              <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-brand-50 to-blue-100 text-brand-600 rounded-full text-sm font-medium mb-4">
+                Get In Touch
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                Let's Work Together
+              </h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-brand-500 to-blue-500 rounded-full mx-auto mb-6"></div>
+              <p className="text-gray-600">
+                Have a project in mind? Looking for a programming assistant or collaborator?
+                I'm currently available for freelance work and interesting projects.
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link to="/contact">
+                <Button className="bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white shadow-lg hover:shadow-brand-500/25 rounded-xl px-8 py-4 w-full sm:w-auto text-lg">
+                  Contact Me
+                </Button>
+              </Link>
+              <a href="mailto:insrab464@gmail.com" className="text-brand-600 hover:text-brand-700 font-medium flex items-center">
+                <span>insrab464@gmail.com</span>
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
