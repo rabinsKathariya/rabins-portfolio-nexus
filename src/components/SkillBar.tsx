@@ -13,7 +13,7 @@ const SkillBar = ({ skill, level }: SkillBarProps) => {
       </div>
       <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
         <div 
-          className="h-full bg-brand-500 rounded-full transition-all duration-1000"
+          className="h-full bg-gradient-to-r from-brand-500 to-brand-600 rounded-full transition-all duration-1000 ease-out"
           style={{ width: `${level}%` }}
         ></div>
       </div>
