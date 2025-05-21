@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -6,6 +7,7 @@ import SocialLinks from "@/components/SocialLinks";
 import ProjectCard from "@/components/ProjectCard";
 import ServiceCard from "@/components/ServiceCard";
 import SkillBar from "@/components/SkillBar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 import { ArrowRight, Github, Linkedin, Instagram } from "lucide-react";
 
@@ -135,14 +137,19 @@ const Index = () => {
                 <div className="absolute -top-6 -right-6 w-24 h-24 bg-brand-100 rounded-full"></div>
                 <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-blue-100 rounded-full"></div>
                 
-                {/* Main image with enhanced styling */}
+                {/* Main image with enhanced styling - Now using Avatar for circular profile */}
                 <div className="relative z-10">
                   <div className="absolute inset-0 bg-gradient-to-tr from-brand-500/20 to-blue-500/20 rounded-3xl transform translate-x-4 translate-y-4"></div>
-                  <img 
-                    src="/lovable-uploads/ca6c3fe7-8d8b-40cb-9eb4-3184fcba63aa.png" 
-                    alt="Rabins Kathariya" 
-                    className="w-full max-w-md h-auto rounded-3xl border-4 border-white shadow-2xl relative z-10 object-cover"
-                  />
+                  <div className="bg-white p-4 rounded-3xl border-4 border-white shadow-2xl relative z-10">
+                    <Avatar className="h-[320px] w-[320px] rounded-full border-8 border-white shadow-lg overflow-hidden">
+                      <AvatarImage 
+                        src="https://i.postimg.cc/15fTbwVH/IMG20231222122816.jpg" 
+                        alt="Rabins Kathariya"
+                        className="object-cover"
+                      />
+                      <AvatarFallback className="text-4xl font-bold text-gray-400">RK</AvatarFallback>
+                    </Avatar>
+                  </div>
                 </div>
                 
                 {/* Tech stack tags */}
