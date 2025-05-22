@@ -57,22 +57,13 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="relative">
-                <div className="absolute inset-0 bg-brand-500/20 rounded-xl transform translate-x-4 translate-y-4"></div>
-                <div className="relative z-10 rounded-xl overflow-hidden shadow-lg">
-                  <img 
-                    src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
-                    alt="Python Programming" 
-                    className="w-full h-auto"
-                  />
-                  {/* Python-related image overlay */}
-                  <div className="absolute bottom-0 right-0 w-32 h-32 md:w-40 md:h-40 rounded-tl-xl overflow-hidden border-4 border-white shadow-lg">
-                    <img 
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" 
-                      alt="Python Logo" 
-                      className="w-full h-full object-cover bg-white p-2"
-                    />
-                  </div>
+              {/* Removed image section */}
+              <div className="bg-gray-100 p-6 rounded-xl">
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Skills Snapshot</h3>
+                <div className="space-y-3">
+                  {skills.slice(0, 3).map((item, index) => (
+                    <SkillBar key={index} skill={item.skill} level={item.level} />
+                  ))}
                 </div>
               </div>
             </div>

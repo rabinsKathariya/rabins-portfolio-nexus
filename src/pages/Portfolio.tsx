@@ -9,37 +9,37 @@ const Portfolio = () => {
       title: "3D Car Game",
       description: "A basic 3D car racing game developed with C# using Unity as a class project. Features include track racing, basic physics, and time trials.",
       technologies: ["Unity", "C#", "3D Modeling"],
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80&w=600"
+      image: null
     },
     {
       title: "Data Analysis Dashboard",
       description: "Interactive dashboard for visualizing and analyzing datasets using Python libraries. Created to practice data visualization techniques.",
       technologies: ["Python", "Pandas", "Seaborn", "Matplotlib"],
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=600"
+      image: null
     },
     {
       title: "Pygame Space Shooter",
       description: "A simple 2D space shooter game developed using Pygame. Features include player movement, enemy ships, and scoring system.",
       technologies: ["Python", "Pygame"],
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600"
+      image: null
     },
     {
       title: "Student Database System",
       description: "A command-line application for managing student records with features for adding, updating, and querying student information.",
       technologies: ["Python", "SQLite"],
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=600"
+      image: null
     },
     {
       title: "Weather Data Visualizer",
       description: "A tool that fetches weather data and generates visualizations to show trends and patterns over time.",
       technologies: ["Python", "Matplotlib", "APIs"],
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=600"
+      image: null
     },
     {
       title: "Basic Image Processing Tool",
       description: "A simple application that applies various filters and transformations to images using OpenCV.",
       technologies: ["Python", "OpenCV", "NumPy"],
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&q=80&w=600"
+      image: null
     }
   ];
 
