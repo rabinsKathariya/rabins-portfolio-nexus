@@ -59,11 +59,21 @@ const About = () => {
             <div>
               <div className="relative">
                 <div className="absolute inset-0 bg-brand-500/20 rounded-xl transform translate-x-4 translate-y-4"></div>
-                <img 
-                  src="/lovable-uploads/ca6c3fe7-8d8b-40cb-9eb4-3184fcba63aa.png" 
-                  alt="Rabins Kathariya" 
-                  className="rounded-xl shadow-lg relative z-10"
-                />
+                <div className="relative z-10 rounded-xl overflow-hidden shadow-lg">
+                  <img 
+                    src="/lovable-uploads/ca6c3fe7-8d8b-40cb-9eb4-3184fcba63aa.png" 
+                    alt="Rabins Kathariya" 
+                    className="w-full h-auto"
+                  />
+                  {/* Python-related image overlay */}
+                  <div className="absolute bottom-0 right-0 w-32 h-32 md:w-40 md:h-40 rounded-tl-xl overflow-hidden border-4 border-white shadow-lg">
+                    <img 
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" 
+                      alt="Python Logo" 
+                      className="w-full h-full object-cover bg-white p-2"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
