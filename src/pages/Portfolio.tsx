@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
@@ -79,7 +78,6 @@ const Portfolio = () => {
                   title={project.title}
                   description={project.description}
                   technologies={project.technologies}
-                  image={project.image}
                 />
               </div>
             ))}

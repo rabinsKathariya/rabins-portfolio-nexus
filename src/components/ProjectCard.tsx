@@ -6,7 +6,7 @@ interface ProjectCardProps {
   image?: string | null;
 }
 
-const ProjectCard = ({ title, description, technologies, image }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, technologies }: ProjectCardProps) => {
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100 group">
       <div className="p-6 relative">

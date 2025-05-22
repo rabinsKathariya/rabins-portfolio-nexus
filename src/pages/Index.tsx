@@ -6,9 +6,8 @@ import SocialLinks from "@/components/SocialLinks";
 import ProjectCard from "@/components/ProjectCard";
 import ServiceCard from "@/components/ServiceCard";
 import SkillBar from "@/components/SkillBar";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
-import { ArrowRight, Github, Linkedin, Instagram } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Index = () => {
   const services = [
@@ -87,8 +86,8 @@ const Index = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-            <div className="space-y-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+            <div className="space-y-8 lg:col-span-8">
               {/* Text gradient for name */}
               <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-brand-50 to-brand-100 text-brand-600 rounded-full text-sm font-medium mb-2 animate-fadeIn" style={{ animationDelay: "0.1s" }}>
                 Hello, I'm Rabins Kathariya
@@ -130,35 +129,12 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="flex justify-center lg:justify-end animate-fadeIn" style={{ animationDelay: "0.3s" }}>
-              <div className="relative">
-                {/* Decorative elements */}
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-brand-100 rounded-full"></div>
-                <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-blue-100 rounded-full"></div>
-                
-                {/* Main image with enhanced styling - Now using Avatar for circular profile */}
-                <div className="relative z-10">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-brand-500/20 to-blue-500/20 rounded-full transform translate-x-4 translate-y-4"></div>
-                  <Avatar className="h-[320px] w-[320px] rounded-full shadow-xl overflow-hidden">
-                    <AvatarImage 
-                      src="https://i.postimg.cc/15fTbwVH/IMG20231222122816.jpg" 
-                      alt="Rabins Kathariya"
-                      className="object-cover"
-                    />
-                    <AvatarFallback className="text-4xl font-bold text-gray-400">RK</AvatarFallback>
-                  </Avatar>
-                </div>
-                
-                {/* Tech stack tags */}
-                <div className="absolute -bottom-4 -left-4 bg-white px-4 py-2 rounded-full shadow-lg z-20 flex items-center gap-2">
-                  <span className="h-3 w-3 bg-brand-500 rounded-full"></span>
-                  <span className="text-sm font-medium">Python</span>
-                </div>
-                
-                <div className="absolute -top-4 -right-4 bg-white px-4 py-2 rounded-full shadow-lg z-20 flex items-center gap-2">
-                  <span className="h-3 w-3 bg-blue-500 rounded-full"></span>
-                  <span className="text-sm font-medium">AI/ML</span>
-                </div>
+            <div className="hidden lg:block lg:col-span-4">
+              {/* We're leaving this div empty as we're removing the profile picture */}
+              <div className="relative h-full flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-tr from-brand-500/10 to-blue-500/10 rounded-full transform translate-x-4 translate-y-4"></div>
+                <div className="absolute top-0 right-0 w-24 h-24 bg-brand-100 rounded-full opacity-50"></div>
+                <div className="absolute bottom-0 left-0 w-16 h-16 bg-blue-100 rounded-full opacity-50"></div>
               </div>
             </div>
           </div>
