@@ -2,6 +2,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
+import { ArrowRight } from "lucide-react";
 
 const Portfolio = () => {
   const projects = [
@@ -47,40 +48,59 @@ const Portfolio = () => {
     <>
       <Navbar />
       
-      {/* Portfolio Hero */}
-      <section className="pt-28 pb-16 md:pt-32 md:pb-20 bg-gray-50">
+      {/* Portfolio Hero - Enhanced with modern UI */}
+      <section className="pt-28 pb-16 md:pt-32 md:pb-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-50 rounded-full opacity-70 blur-3xl -z-10"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-50 rounded-full opacity-70 blur-3xl -z-10"></div>
+        
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold text-gray-800 mb-6">My Portfolio</h1>
-            <p className="text-gray-600 text-lg">
+            <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-brand-50 to-brand-100 text-brand-600 rounded-full text-sm font-medium mb-4 animate-fadeIn">
+              My Projects
+            </div>
+            <h1 className="text-4xl font-bold text-gray-800 mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600">
+              My Portfolio
+            </h1>
+            <p className="text-gray-600 text-lg leading-relaxed">
               A collection of projects showcasing my skills and learning journey in programming and development.
             </p>
           </div>
         </div>
       </section>
       
-      {/* Portfolio Projects */}
+      {/* Portfolio Projects - Enhanced with modern UI */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <ProjectCard 
-                key={index}
-                title={project.title}
-                description={project.description}
-                technologies={project.technologies}
-                image={project.image}
-              />
+              <div key={index} className="transform hover:-translate-y-2 transition-all duration-300">
+                <ProjectCard 
+                  title={project.title}
+                  description={project.description}
+                  technologies={project.technologies}
+                  image={project.image}
+                />
+              </div>
             ))}
           </div>
         </div>
       </section>
       
-      {/* Project Process */}
-      <section className="py-16 bg-gray-50">
+      {/* Project Process - Enhanced with modern UI */}
+      <section className="py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-40 right-20 w-72 h-72 bg-blue-50 rounded-full opacity-70 blur-3xl -z-10"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-brand-50 rounded-full opacity-70 blur-3xl -z-10"></div>
+        
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">My Project Approach</h2>
+            <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-blue-50 to-blue-100 text-blue-600 rounded-full text-sm font-medium mb-4 animate-fadeIn">
+              My Approach
+            </div>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600">
+              My Project Approach
+            </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Here's how I typically approach development projects
             </p>
@@ -109,8 +129,12 @@ const Portfolio = () => {
                 description: "Thoroughly testing and refining the final product."
               }
             ].map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-500 text-white font-semibold text-lg mb-4">
+              <div key={index} 
+                className="bg-white p-8 rounded-xl shadow-md text-center relative overflow-hidden group hover:shadow-lg transition-all border border-gray-100">
+                {/* Top gradient accent */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-400 to-blue-400"></div>
+                
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-brand-500 to-brand-600 text-white font-semibold text-lg mb-5 shadow-md group-hover:scale-110 transition-transform">
                   {item.step}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">{item.title}</h3>
@@ -121,14 +145,26 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Learning & Growth */}
+      {/* Learning & Growth - Enhanced with modern UI */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-md">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Learning & Growth</h2>
-            <p className="text-gray-600 mb-6">
+          <div className="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-md border border-gray-100 relative overflow-hidden">
+            {/* Decorative corner accent */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-brand-100 to-transparent -z-10"></div>
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-blue-100 to-transparent -z-10"></div>
+            
+            <div className="text-center mb-8">
+              <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-green-50 to-green-100 text-green-600 rounded-full text-sm font-medium mb-4 animate-fadeIn">
+                Growth Mindset
+              </div>
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">Learning & Growth</h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-green-400 to-green-500 rounded-full mx-auto mb-6"></div>
+            </div>
+            
+            <p className="text-gray-600 mb-6 text-center">
               Each project represents a learning opportunity for me. As a student, I focus on:
             </p>
+            
             <div className="space-y-4">
               {[
                 "Building practical skills through hands-on projects",
@@ -137,13 +173,13 @@ const Portfolio = () => {
                 "Solving real-world problems through code",
                 "Continuous improvement and refinement of skills"
               ].map((item, index) => (
-                <div key={index} className="flex items-start">
+                <div key={index} className="flex items-start p-3 rounded-lg hover:bg-gray-50 transition-colors">
                   <div className="flex-shrink-0">
-                    <svg className="h-6 w-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 text-green-600">
+                      <ArrowRight className="h-4 w-4" />
+                    </div>
                   </div>
-                  <p className="ml-3 text-gray-600">{item}</p>
+                  <p className="ml-4 text-gray-700">{item}</p>
                 </div>
               ))}
             </div>
