@@ -61,8 +61,8 @@ const About = () => {
                 <div className="absolute inset-0 bg-brand-500/20 rounded-xl transform translate-x-4 translate-y-4"></div>
                 <div className="relative z-10 rounded-xl overflow-hidden shadow-lg">
                   <img 
-                    src="/lovable-uploads/ca6c3fe7-8d8b-40cb-9eb4-3184fcba63aa.png" 
-                    alt="Rabins Kathariya" 
+                    src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
+                    alt="Python Programming" 
                     className="w-full h-auto"
                   />
                   {/* Python-related image overlay */}
