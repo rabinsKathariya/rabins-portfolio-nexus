@@ -57,14 +57,13 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              {/* Removed image section */}
-              <div className="bg-gray-100 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">Skills Snapshot</h3>
-                <div className="space-y-3">
-                  {skills.slice(0, 3).map((item, index) => (
-                    <SkillBar key={index} skill={item.skill} level={item.level} />
-                  ))}
-                </div>
+              <div className="relative">
+                <div className="absolute inset-0 bg-brand-500/20 rounded-xl transform translate-x-4 translate-y-4"></div>
+                <img 
+                  src="/lovable-uploads/ca6c3fe7-8d8b-40cb-9eb4-3184fcba63aa.png" 
+                  alt="Rabins Kathariya" 
+                  className="rounded-xl shadow-lg relative z-10"
+                />
               </div>
             </div>
 
