@@ -36,7 +36,7 @@ const ContactForm = () => {
 
     emailjs.send(
       'service_v5z4koq',
-      '__ejs-test-mail-service__',
+      'template_f33vvvt',
       templateParams,
       '0GKkQnWULY-Ooaod9'
     )
