@@ -18,6 +18,9 @@ const Navbar = () => {
     { title: "Contact", path: "/contact" },
   ];
 
+  // Modified Google Drive URL to force download
+  const cvDownloadUrl = "https://docs.google.com/document/d/1oMIHR9ERP-4CmDuDm8ayPuqrRdKCEO6_/export?format=docx";
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -37,9 +40,8 @@ const Navbar = () => {
             </Link>
           ))}
           <a 
-            href="/resume.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+            href={cvDownloadUrl}
+            download="Rabins_Kathariya_CV.docx"
             className="rounded-md bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 transition-colors font-medium"
           >
             Download CV
@@ -81,9 +83,8 @@ const Navbar = () => {
             ))}
             <li>
               <a 
-                href="/resume.pdf"
-                target="_blank" 
-                rel="noopener noreferrer" 
+                href={cvDownloadUrl}
+                download="Rabins_Kathariya_CV.docx"
                 className="block text-brand-500 font-medium"
                 onClick={toggleMenu}
               >
