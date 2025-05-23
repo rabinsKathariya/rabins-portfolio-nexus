@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -26,8 +27,20 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    };
+
+    emailjs.send(
+      'service_v5z4koq',
+      '__ejs-test-mail-service__',
+      templateParams,
+      '0GKkQnWULY-Ooaod9'
+    )
+    .then(() => {
       toast({
         title: "Message Sent!",
         description: "Thank you for contacting me. I'll get back to you soon.",
@@ -38,8 +51,18 @@ const ContactForm = () => {
         subject: "",
         message: "",
       });
+    })
+    .catch((error) => {
+      console.error('Email sending failed:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send your message. Please try again later.",
+        variant: "destructive",
+      });
+    })
+    .finally(() => {
       setIsSubmitting(false);
-    }, 1000);
+    });
   };
 
   return (

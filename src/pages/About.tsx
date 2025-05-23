@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SkillBar from "@/components/SkillBar";
@@ -60,9 +59,9 @@ const About = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-brand-500/20 rounded-xl transform translate-x-4 translate-y-4"></div>
                 <img 
-                  src="/lovable-uploads/ca6c3fe7-8d8b-40cb-9eb4-3184fcba63aa.png" 
-                  alt="Rabins Kathariya" 
-                  className="rounded-xl shadow-lg relative z-10"
+                  src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7" 
+                  alt="Python Programming" 
+                  className="rounded-xl shadow-lg relative z-10 w-full h-auto"
                 />
               </div>
             </div>
