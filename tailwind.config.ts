@@ -101,12 +101,63 @@ export default {
 				fadeIn: {
 					"0%": { opacity: "0", transform: "translateY(10px)" },
 					"100%": { opacity: "1", transform: "translateY(0)" }
+				},
+				fadeInUp: {
+					"0%": { opacity: "0", transform: "translateY(30px)" },
+					"100%": { opacity: "1", transform: "translateY(0)" }
+				},
+				fadeInDown: {
+					"0%": { opacity: "0", transform: "translateY(-30px)" },
+					"100%": { opacity: "1", transform: "translateY(0)" }
+				},
+				fadeInLeft: {
+					"0%": { opacity: "0", transform: "translateX(-30px)" },
+					"100%": { opacity: "1", transform: "translateX(0)" }
+				},
+				fadeInRight: {
+					"0%": { opacity: "0", transform: "translateX(30px)" },
+					"100%": { opacity: "1", transform: "translateX(0)" }
+				},
+				scaleIn: {
+					"0%": { opacity: "0", transform: "scale(0.9)" },
+					"100%": { opacity: "1", transform: "scale(1)" }
+				},
+				bounceIn: {
+					"0%": { opacity: "0", transform: "scale(0.8)" },
+					"50%": { opacity: "1", transform: "scale(1.05)" },
+					"100%": { opacity: "1", transform: "scale(1)" }
+				},
+				slideInBottom: {
+					"0%": { opacity: "0", transform: "translateY(50px)" },
+					"100%": { opacity: "1", transform: "translateY(0)" }
+				},
+				float: {
+					"0%, 100%": { transform: "translateY(0px)" },
+					"50%": { transform: "translateY(-10px)" }
+				},
+				pulse: {
+					"0%, 100%": { opacity: "1" },
+					"50%": { opacity: "0.5" }
+				},
+				wiggle: {
+					"0%, 100%": { transform: "rotate(-3deg)" },
+					"50%": { transform: "rotate(3deg)" }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				"fadeIn": "fadeIn 0.5s ease-out forwards"
+				"fadeIn": "fadeIn 0.5s ease-out forwards",
+				"fadeInUp": "fadeInUp 0.6s ease-out forwards",
+				"fadeInDown": "fadeInDown 0.6s ease-out forwards",
+				"fadeInLeft": "fadeInLeft 0.6s ease-out forwards",
+				"fadeInRight": "fadeInRight 0.6s ease-out forwards",
+				"scaleIn": "scaleIn 0.5s ease-out forwards",
+				"bounceIn": "bounceIn 0.8s ease-out forwards",
+				"slideInBottom": "slideInBottom 0.7s ease-out forwards",
+				"float": "float 3s ease-in-out infinite",
+				"pulse": "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+				"wiggle": "wiggle 1s ease-in-out infinite"
 			}
 		}
 	},

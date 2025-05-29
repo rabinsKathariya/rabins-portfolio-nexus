@@ -44,15 +44,15 @@ const Portfolio = () => {
   ];
 
   return (
-    <>
+    <div className="page-transition">
       <Navbar />
       
       {/* Portfolio Hero */}
       <section className="pt-28 pb-16 md:pt-32 md:pb-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold text-gray-800 mb-6">My Portfolio</h1>
-            <p className="text-gray-600 text-lg">
+            <h1 className="text-4xl font-bold text-gray-800 mb-6 animate-fadeInDown">My Portfolio</h1>
+            <p className="text-gray-600 text-lg animate-fadeInUp stagger-2">
               A collection of projects showcasing my skills and learning journey in programming and development.
             </p>
           </div>
@@ -64,13 +64,14 @@ const Portfolio = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <ProjectCard 
-                key={index}
-                title={project.title}
-                description={project.description}
-                technologies={project.technologies}
-                image={project.image}
-              />
+              <div key={index} className={`animate-fadeInUp stagger-${(index % 3) + 1} hover-lift`}>
+                <ProjectCard 
+                  title={project.title}
+                  description={project.description}
+                  technologies={project.technologies}
+                  image={project.image}
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -79,7 +80,7 @@ const Portfolio = () => {
       {/* Project Process */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 animate-fadeInUp">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">My Project Approach</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Here's how I typically approach development projects
@@ -109,8 +110,8 @@ const Portfolio = () => {
                 description: "Thoroughly testing and refining the final product."
               }
             ].map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-500 text-white font-semibold text-lg mb-4">
+              <div key={index} className={`bg-white p-6 rounded-lg shadow-md text-center animate-fadeInUp stagger-${index + 2} hover-lift`}>
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-500 text-white font-semibold text-lg mb-4 animate-bounceIn">
                   {item.step}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">{item.title}</h3>
@@ -124,7 +125,7 @@ const Portfolio = () => {
       {/* Learning & Growth */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-md">
+          <div className="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-md animate-scaleIn hover-lift">
             <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Learning & Growth</h2>
             <p className="text-gray-600 mb-6">
               Each project represents a learning opportunity for me. As a student, I focus on:
@@ -137,7 +138,7 @@ const Portfolio = () => {
                 "Solving real-world problems through code",
                 "Continuous improvement and refinement of skills"
               ].map((item, index) => (
-                <div key={index} className="flex items-start">
+                <div key={index} className={`flex items-start animate-fadeInLeft stagger-${index + 2}`}>
                   <div className="flex-shrink-0">
                     <svg className="h-6 w-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
@@ -152,7 +153,7 @@ const Portfolio = () => {
       </section>
 
       <Footer />
-    </>
+    </div>
   );
 };
 

@@ -68,7 +68,7 @@ const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
+        <div className="animate-fadeInLeft stagger-1">
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
             Name
           </label>
@@ -79,11 +79,11 @@ const ContactForm = () => {
             onChange={handleChange}
             placeholder="Your name"
             required
-            className="w-full"
+            className="w-full hover-lift"
           />
         </div>
 
-        <div>
+        <div className="animate-fadeInRight stagger-1">
           <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
             Email
           </label>
@@ -95,12 +95,12 @@ const ContactForm = () => {
             onChange={handleChange}
             placeholder="Your email"
             required
-            className="w-full"
+            className="w-full hover-lift"
           />
         </div>
       </div>
 
-      <div>
+      <div className="animate-fadeInUp stagger-2">
         <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
           Subject
         </label>
@@ -111,11 +111,11 @@ const ContactForm = () => {
           onChange={handleChange}
           placeholder="Subject"
           required
-          className="w-full"
+          className="w-full hover-lift"
         />
       </div>
 
-      <div>
+      <div className="animate-fadeInUp stagger-3">
         <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
           Message
         </label>
@@ -126,17 +126,19 @@ const ContactForm = () => {
           onChange={handleChange}
           placeholder="Your message"
           required
-          className="w-full min-h-[150px]"
+          className="w-full min-h-[150px] hover-lift"
         />
       </div>
 
-      <Button 
-        type="submit" 
-        disabled={isSubmitting}
-        className="bg-brand-500 hover:bg-brand-600 text-white px-6 py-3"
-      >
-        {isSubmitting ? "Sending..." : "Send Message"}
-      </Button>
+      <div className="animate-bounceIn stagger-4">
+        <Button 
+          type="submit" 
+          disabled={isSubmitting}
+          className="bg-brand-500 hover:bg-brand-600 text-white px-6 py-3 hover-lift hover-glow"
+        >
+          {isSubmitting ? "Sending..." : "Send Message"}
+        </Button>
+      </div>
     </form>
   );
 };

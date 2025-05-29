@@ -68,54 +68,54 @@ const Index = () => {
   ];
 
   return (
-    <>
+    <div className="page-transition">
       <Navbar />
       
       {/* Hero Section - Enhanced with modern UI */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
         {/* Background elements */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-20 right-1/4 w-64 h-64 bg-brand-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-1/4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 right-1/4 w-64 h-64 bg-brand-500/10 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-20 left-1/4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
             <div className="space-y-8">
               {/* Text gradient for name */}
-              <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-brand-50 to-brand-100 text-brand-600 rounded-full text-sm font-medium mb-2 animate-fadeIn" style={{ animationDelay: "0.1s" }}>
+              <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-brand-50 to-brand-100 text-brand-600 rounded-full text-sm font-medium mb-2 animate-fadeInDown stagger-1">
                 Hello, I'm Rabins Kathariya
               </div>
               
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fadeIn" style={{ animationDelay: "0.2s" }}>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fadeInUp stagger-2">
                 <span className="text-gray-800">Aspiring </span>
                 <span className="bg-gradient-to-r from-brand-600 to-brand-500 bg-clip-text text-transparent">
                   Python Developer
                 </span>
               </h1>
               
-              <p className="text-lg text-gray-600 max-w-xl animate-fadeIn" style={{ animationDelay: "0.3s" }}>
+              <p className="text-lg text-gray-600 max-w-xl animate-fadeInUp stagger-3">
                 A Class 12 Computer Engineering student passionate about programming, 
                 currently exploring the exciting worlds of AI/ML and data visualization.
               </p>
               
               {/* CTA buttons with improved styling */}
-              <div className="flex flex-wrap gap-5 animate-fadeIn" style={{ animationDelay: "0.4s" }}>
+              <div className="flex flex-wrap gap-5 animate-fadeInUp stagger-4">
                 <Link to="/portfolio">
-                  <Button className="bg-brand-500 hover:bg-brand-600 transition-all duration-300 shadow-lg hover:shadow-brand-500/25 rounded-xl text-white px-6 py-6 h-auto">
+                  <Button className="bg-brand-500 hover:bg-brand-600 transition-all duration-300 shadow-lg hover:shadow-brand-500/25 rounded-xl text-white px-6 py-6 h-auto hover-lift">
                     Explore My Work 
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
                 <Link to="/contact">
-                  <Button className="bg-white border-2 border-gray-200 hover:border-brand-200 hover:bg-gray-50 shadow-lg transition-all duration-300 rounded-xl text-gray-700 px-6 py-6 h-auto">
+                  <Button className="bg-white border-2 border-gray-200 hover:border-brand-200 hover:bg-gray-50 shadow-lg transition-all duration-300 rounded-xl text-gray-700 px-6 py-6 h-auto hover-lift">
                     Get In Touch
                   </Button>
                 </Link>
               </div>
               
               {/* Enhanced social links */}
-              <div className="pt-6 animate-fadeIn" style={{ animationDelay: "0.5s" }}>
+              <div className="pt-6 animate-fadeInUp stagger-5">
                 <div className="flex items-center gap-3 text-gray-500">
                   <span className="text-sm font-medium">Connect with me:</span>
                   <SocialLinks />
@@ -123,16 +123,16 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="flex justify-center lg:justify-end animate-fadeIn" style={{ animationDelay: "0.3s" }}>
+            <div className="flex justify-center lg:justify-end animate-fadeInRight stagger-3">
               <div className="relative">
                 {/* Decorative elements */}
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-brand-100 rounded-full"></div>
-                <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-blue-100 rounded-full"></div>
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-brand-100 rounded-full animate-pulse"></div>
+                <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-blue-100 rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
                 
                 {/* Profile image with circular Avatar component */}
                 <div className="relative z-10">
                   <div className="absolute inset-0 bg-gradient-to-tr from-brand-500/20 to-blue-500/20 rounded-3xl transform translate-x-4 translate-y-4"></div>
-                  <div className="relative z-10 p-4 bg-white rounded-3xl border-4 border-white shadow-2xl">
+                  <div className="relative z-10 p-4 bg-white rounded-3xl border-4 border-white shadow-2xl hover-lift">
                     <Avatar className="h-80 w-80">
                       <AvatarImage src="https://i.postimg.cc/15fTbwVH/IMG20231222122816.jpg" alt="Rabins Kathariya" />
                       <AvatarFallback>RK</AvatarFallback>
@@ -141,13 +141,13 @@ const Index = () => {
                 </div>
                 
                 {/* Tech stack tags */}
-                <div className="absolute -bottom-4 -left-4 bg-white px-4 py-2 rounded-full shadow-lg z-20 flex items-center gap-2">
-                  <span className="h-3 w-3 bg-brand-500 rounded-full"></span>
+                <div className="absolute -bottom-4 -left-4 bg-white px-4 py-2 rounded-full shadow-lg z-20 flex items-center gap-2 animate-bounceIn stagger-6">
+                  <span className="h-3 w-3 bg-brand-500 rounded-full animate-pulse"></span>
                   <span className="text-sm font-medium">Python</span>
                 </div>
                 
-                <div className="absolute -top-4 -right-4 bg-white px-4 py-2 rounded-full shadow-lg z-20 flex items-center gap-2">
-                  <span className="h-3 w-3 bg-blue-500 rounded-full"></span>
+                <div className="absolute -top-4 -right-4 bg-white px-4 py-2 rounded-full shadow-lg z-20 flex items-center gap-2 animate-bounceIn stagger-5">
+                  <span className="h-3 w-3 bg-blue-500 rounded-full animate-pulse"></span>
                   <span className="text-sm font-medium">AI/ML</span>
                 </div>
               </div>
@@ -159,22 +159,22 @@ const Index = () => {
       {/* About Section Preview */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 animate-fadeInUp">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">About Me</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               I'm a passionate programmer with strong focus on Python and emerging interest in AI/ML technologies.
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto animate-fadeInUp stagger-2">
             <p className="text-gray-600 mb-6 text-center">
               As a Class 12 Computer Engineering student from Nepal, I'm dedicated to expanding my skills in software development. 
               My expertise includes Python (NumPy, Pandas, Pygame, Seaborn, OpenCV), along with foundational knowledge in C, C++, and C#.
             </p>
             
-            <div className="flex justify-center">
+            <div className="flex justify-center animate-scaleIn stagger-3">
               <Link to="/about">
-                <Button className="bg-transparent hover:bg-gray-100 text-brand-600 border border-brand-500">
+                <Button className="bg-transparent hover:bg-gray-100 text-brand-600 border border-brand-500 hover-lift">
                   Learn More About Me <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
@@ -186,13 +186,13 @@ const Index = () => {
       {/* Featured Projects */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-12">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-12 animate-fadeInUp">
             <div>
               <h2 className="text-3xl font-bold text-gray-800 mb-2">Featured Projects</h2>
               <p className="text-gray-600">Check out some of my recent work</p>
             </div>
             <Link to="/portfolio" className="mt-4 md:mt-0">
-              <Button className="bg-transparent hover:bg-gray-100 text-brand-600 border border-brand-500">
+              <Button className="bg-transparent hover:bg-gray-100 text-brand-600 border border-brand-500 hover-lift">
                 View All Projects
               </Button>
             </Link>
@@ -200,13 +200,14 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <ProjectCard 
-                key={index}
-                title={project.title}
-                description={project.description}
-                technologies={project.technologies}
-                image={project.image}
-              />
+              <div key={index} className={`animate-fadeInUp stagger-${index + 2} hover-lift`}>
+                <ProjectCard 
+                  title={project.title}
+                  description={project.description}
+                  technologies={project.technologies}
+                  image={project.image}
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -215,7 +216,7 @@ const Index = () => {
       {/* Services Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 animate-fadeInUp">
             <h2 className="text-3xl font-bold text-gray-800 mb-2">My Services</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Services I can provide to help with your projects
@@ -224,19 +225,20 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <ServiceCard 
-                key={index}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-                features={service.features}
-              />
+              <div key={index} className={`animate-fadeInUp stagger-${index + 2} hover-lift hover-glow`}>
+                <ServiceCard 
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                  features={service.features}
+                />
+              </div>
             ))}
           </div>
 
-          <div className="flex justify-center mt-12">
+          <div className="flex justify-center mt-12 animate-scaleIn stagger-5">
             <Link to="/services">
-              <Button className="bg-brand-500 hover:bg-brand-600 text-white px-6 py-3">
+              <Button className="bg-brand-500 hover:bg-brand-600 text-white px-6 py-3 hover-lift">
                 Explore All Services <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -247,21 +249,23 @@ const Index = () => {
       {/* Contact CTA */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Let's Work Together</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+          <h2 className="text-3xl font-bold text-gray-800 mb-6 animate-fadeInUp">Let's Work Together</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto mb-8 animate-fadeInUp stagger-2">
             Have a project in mind? Looking for a programming assistant or collaborator?
             I'm currently available for freelance work and interesting projects.
           </p>
-          <Link to="/contact">
-            <Button className="bg-brand-500 hover:bg-brand-600 text-white px-8 py-4 text-lg">
-              Get In Touch
-            </Button>
-          </Link>
+          <div className="animate-scaleIn stagger-3">
+            <Link to="/contact">
+              <Button className="bg-brand-500 hover:bg-brand-600 text-white px-8 py-4 text-lg hover-lift hover-glow">
+                Get In Touch
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
       <Footer />
-    </>
+    </div>
   );
 };
 

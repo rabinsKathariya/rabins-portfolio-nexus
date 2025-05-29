@@ -35,15 +35,15 @@ const About = () => {
   ];
 
   return (
-    <>
+    <div className="page-transition">
       <Navbar />
       
       {/* About Hero */}
       <section className="pt-28 pb-16 md:pt-32 md:pb-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold text-gray-800 mb-6">About Me</h1>
-            <p className="text-gray-600 text-lg">
+            <h1 className="text-4xl font-bold text-gray-800 mb-6 animate-fadeInDown">About Me</h1>
+            <p className="text-gray-600 text-lg animate-fadeInUp stagger-2">
               I'm Rabins Kathariya, a Class 12 Computer Engineering student from Kailali, Nepal, 
               passionate about programming and technology.
             </p>
@@ -55,18 +55,18 @@ const About = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="animate-fadeInLeft">
               <div className="relative">
                 <div className="absolute inset-0 bg-brand-500/20 rounded-xl transform translate-x-4 translate-y-4"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7" 
+                  src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&q=80&w=800" 
                   alt="Python Programming" 
-                  className="rounded-xl shadow-lg relative z-10 w-full h-auto"
+                  className="rounded-xl shadow-lg relative z-10 w-full h-auto hover-lift"
                 />
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-6 animate-fadeInRight">
               <div>
                 <h2 className="text-3xl font-bold text-gray-800 mb-4">My Journey</h2>
                 <p className="text-gray-600 mb-4">
@@ -84,13 +84,13 @@ const About = () => {
                 </p>
               </div>
               
-              <div>
+              <div className="animate-fadeInUp stagger-3">
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">My Interests</h3>
                 <div className="flex flex-wrap gap-2">
                   {["Python Development", "Game Creation", "Data Analysis", "AI/ML", "Problem Solving", "Open Source"].map((interest, index) => (
                     <span 
                       key={index} 
-                      className="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm"
+                      className={`bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm animate-scaleIn stagger-${index + 1} hover-lift`}
                     >
                       {interest}
                     </span>
@@ -98,9 +98,9 @@ const About = () => {
                 </div>
               </div>
               
-              <div>
+              <div className="animate-bounceIn stagger-4">
                 <Link to="/contact">
-                  <Button className="bg-brand-500 hover:bg-brand-600 text-white">
+                  <Button className="bg-brand-500 hover:bg-brand-600 text-white hover-lift hover-glow">
                     Get In Touch <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
@@ -113,7 +113,7 @@ const About = () => {
       {/* Skills Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 animate-fadeInUp">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">My Skills</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               I've developed a range of technical skills with a focus on Python and its ecosystem.
@@ -122,7 +122,9 @@ const About = () => {
 
           <div className="max-w-3xl mx-auto">
             {skills.map((skill, index) => (
-              <SkillBar key={index} skill={skill.skill} level={skill.level} />
+              <div key={index} className={`animate-fadeInLeft stagger-${index + 1}`}>
+                <SkillBar skill={skill.skill} level={skill.level} />
+              </div>
             ))}
           </div>
         </div>
@@ -131,7 +133,7 @@ const About = () => {
       {/* Education Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 animate-fadeInUp">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Education</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               My academic journey in computer engineering.
@@ -141,7 +143,7 @@ const About = () => {
           <div className="max-w-3xl mx-auto">
             <div className="space-y-8">
               {education.map((item, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                <div key={index} className={`bg-white p-6 rounded-lg shadow-md animate-fadeInUp stagger-${index + 2} hover-lift`}>
                   <div className="flex flex-col md:flex-row md:justify-between md:items-center">
                     <h3 className="text-xl font-semibold text-gray-800">{item.degree}</h3>
                     <span className="text-brand-500 font-medium">{item.duration}</span>
@@ -159,33 +161,28 @@ const About = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="animate-fadeInLeft">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">Future Goals</h2>
               <p className="text-gray-600 mb-4">
                 Looking ahead, I aim to deepen my expertise in Python and AI/ML technologies. 
                 I'm particularly interested in:
               </p>
               <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="text-brand-500 mr-2 font-bold">•</span>
-                  <span className="text-gray-600">Specializing in practical AI/ML applications</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-500 mr-2 font-bold">•</span>
-                  <span className="text-gray-600">Contributing to open-source Python projects</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-500 mr-2 font-bold">•</span>
-                  <span className="text-gray-600">Developing innovative software solutions</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-500 mr-2 font-bold">•</span>
-                  <span className="text-gray-600">Pursuing higher education in Computer Science</span>
-                </li>
+                {[
+                  "Specializing in practical AI/ML applications",
+                  "Contributing to open-source Python projects",
+                  "Developing innovative software solutions",
+                  "Pursuing higher education in Computer Science"
+                ].map((goal, index) => (
+                  <li key={index} className={`flex items-start animate-fadeInUp stagger-${index + 2}`}>
+                    <span className="text-brand-500 mr-2 font-bold">•</span>
+                    <span className="text-gray-600">{goal}</span>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="bg-white p-6 rounded-lg shadow-md animate-fadeInRight hover-lift">
               <h3 className="text-xl font-semibold text-gray-800 mb-4">Personal Philosophy</h3>
               <blockquote className="border-l-4 border-brand-500 pl-4 italic text-gray-600">
                 "I believe in continuous learning and the power of technology to solve real-world problems. 
@@ -198,7 +195,7 @@ const About = () => {
       </section>
 
       <Footer />
-    </>
+    </div>
   );
 };
 

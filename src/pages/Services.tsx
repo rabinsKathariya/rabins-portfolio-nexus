@@ -119,15 +119,15 @@ const Services = () => {
   ];
 
   return (
-    <>
+    <div className="page-transition">
       <Navbar />
       
       {/* Services Hero */}
       <section className="pt-28 pb-16 md:pt-32 md:pb-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold text-gray-800 mb-6">My Services</h1>
-            <p className="text-gray-600 text-lg">
+            <h1 className="text-4xl font-bold text-gray-800 mb-6 animate-fadeInDown">My Services</h1>
+            <p className="text-gray-600 text-lg animate-fadeInUp stagger-2">
               Here are the programming and development services I can provide to help with your projects.
             </p>
           </div>
@@ -139,13 +139,14 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <ServiceCard 
-                key={index}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-                features={service.features}
-              />
+              <div key={index} className={`animate-fadeInUp stagger-${(index % 3) + 1} hover-lift hover-glow`}>
+                <ServiceCard 
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                  features={service.features}
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -154,7 +155,7 @@ const Services = () => {
       {/* How I Work */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 animate-fadeInUp">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">How I Work</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               My approach to delivering quality services
@@ -181,7 +182,7 @@ const Services = () => {
                   description: "Commitment to delivering projects on schedule while maintaining quality standards."
                 }
               ].map((item, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                <div key={index} className={`bg-white p-6 rounded-lg shadow-md animate-fadeInUp stagger-${index + 2} hover-lift`}>
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">{item.title}</h3>
                   <p className="text-gray-600">{item.description}</p>
                 </div>
@@ -194,7 +195,7 @@ const Services = () => {
       {/* Tech Stack */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 animate-fadeInUp">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">My Tech Stack</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Technologies and tools I use to deliver services
@@ -208,7 +209,7 @@ const Services = () => {
                 "Seaborn", "Matplotlib", "OpenCV", "SQLite",
                 "C", "C++", "C#", "Unity"
               ].map((tech, index) => (
-                <div key={index} className="bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+                <div key={index} className={`bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow animate-scaleIn stagger-${index + 1} hover-lift`}>
                   <span className="text-gray-800 font-medium">{tech}</span>
                 </div>
               ))}
@@ -220,21 +221,23 @@ const Services = () => {
       {/* Call to Action */}
       <section className="py-20 bg-brand-500 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Start a Project?</h2>
-          <p className="max-w-2xl mx-auto mb-8 text-white/90">
+          <h2 className="text-3xl font-bold mb-6 animate-fadeInUp">Ready to Start a Project?</h2>
+          <p className="max-w-2xl mx-auto mb-8 text-white/90 animate-fadeInUp stagger-2">
             If you're interested in working together or have questions about my services,
             I'd love to hear from you. Let's create something great together!
           </p>
-          <Link to="/contact">
-            <Button className="bg-white text-brand-600 hover:bg-gray-100 px-8 py-3 text-lg">
-              Contact Me
-            </Button>
-          </Link>
+          <div className="animate-bounceIn stagger-3">
+            <Link to="/contact">
+              <Button className="bg-white text-brand-600 hover:bg-gray-100 px-8 py-3 text-lg hover-lift">
+                Contact Me
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
       <Footer />
-    </>
+    </div>
   );
 };
 
