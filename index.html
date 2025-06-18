@@ -31,8 +31,13 @@
               l.pathname.slice(0, -1) + decoded + l.hash
           );
         }
-        // Ensure we're using hash routing for GitHub Pages
-        if (l.pathname !== '/' && !l.hash && l.pathname.includes('/rabins-portfolio-nexus/')) {
+        // Handle root domain redirect to subdirectory
+        if (l.pathname === '/' && !l.pathname.includes('/rabins-portfolio-nexus/')) {
+          window.location.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + 
+                                 '/rabins-portfolio-nexus/#/');
+        }
+        // Ensure we're using hash routing for GitHub Pages subdirectory
+        else if (l.pathname !== '/' && !l.hash && l.pathname.includes('/rabins-portfolio-nexus/')) {
           window.history.replaceState(null, null, l.pathname + '#/');
         }
       }(window.location))
