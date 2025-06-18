@@ -4,7 +4,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 interface ScrollAnimationWrapperProps {
   children: React.ReactNode;
-  animation?: 'fade' | 'slideLeft' | 'slideRight' | 'scale' | 'rotate' | 'blur';
+  animation?: 'fade' | 'slideLeft' | 'slideRight' | 'scale' | 'rotate' | 'blur' | 'bounce';
   delay?: number;
   className?: string;
   threshold?: number;
@@ -26,6 +26,7 @@ const ScrollAnimationWrapper: React.FC<ScrollAnimationWrapperProps> = ({
       case 'scale': return 'scroll-scale-in';
       case 'rotate': return 'scroll-rotate-in';
       case 'blur': return 'scroll-blur-in';
+      case 'bounce': return 'scroll-bounce-in';
       default: return 'scroll-fade-in';
     }
   };
